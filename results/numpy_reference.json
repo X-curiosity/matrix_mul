@@ -1,0 +1,122 @@
+[
+  {
+    "matrix1 size": "3x4",
+    "matrix2 size": "4x8",
+    "final_matrix size": "3x8",
+    "inference time": "1.907e-05 s"
+  },
+  {
+    "matrix1 size": "7x8",
+    "matrix2 size": "8x12",
+    "final_matrix size": "7x12",
+    "inference time": "3.099e-06 s"
+  },
+  {
+    "matrix1 size": "9x16",
+    "matrix2 size": "16x20",
+    "final_matrix size": "9x20",
+    "inference time": "2.146e-06 s"
+  },
+  {
+    "matrix1 size": "25x25",
+    "matrix2 size": "25x25",
+    "final_matrix size": "25x25",
+    "inference time": "1.203e-03 s"
+  },
+  {
+    "matrix1 size": "50x50",
+    "matrix2 size": "50x50",
+    "final_matrix size": "50x50",
+    "inference time": "1.621e-05 s"
+  },
+  {
+    "matrix1 size": "75x96",
+    "matrix2 size": "96x128",
+    "final_matrix size": "75x128",
+    "inference time": "1.574e-05 s"
+  },
+  {
+    "matrix1 size": "100x128",
+    "matrix2 size": "128x160",
+    "final_matrix size": "100x160",
+    "inference time": "6.032e-05 s"
+  },
+  {
+    "matrix1 size": "150x160",
+    "matrix2 size": "160x192",
+    "final_matrix size": "150x192",
+    "inference time": "3.695e-05 s"
+  },
+  {
+    "matrix1 size": "200x200",
+    "matrix2 size": "200x224",
+    "final_matrix size": "200x224",
+    "inference time": "1.111e-04 s"
+  },
+  {
+    "matrix1 size": "256x256",
+    "matrix2 size": "256x256",
+    "final_matrix size": "256x256",
+    "inference time": "1.242e-04 s"
+  },
+  {
+    "matrix1 size": "384x512",
+    "matrix2 size": "512x640",
+    "final_matrix size": "384x640",
+    "inference time": "5.629e-04 s"
+  },
+  {
+    "matrix1 size": "512x768",
+    "matrix2 size": "768x768",
+    "final_matrix size": "512x768",
+    "inference time": "1.462e-03 s"
+  },
+  {
+    "matrix1 size": "640x896",
+    "matrix2 size": "896x896",
+    "final_matrix size": "640x896",
+    "inference time": "1.878e-03 s"
+  },
+  {
+    "matrix1 size": "768x1024",
+    "matrix2 size": "1024x1024",
+    "final_matrix size": "768x1024",
+    "inference time": "2.917e-03 s"
+  },
+  {
+    "matrix1 size": "1024x1280",
+    "matrix2 size": "1280x1536",
+    "final_matrix size": "1024x1536",
+    "inference time": "8.508e-03 s"
+  },
+  {
+    "matrix1 size": "1280x1536",
+    "matrix2 size": "1536x1792",
+    "final_matrix size": "1280x1792",
+    "inference time": "1.237e-02 s"
+  },
+  {
+    "matrix1 size": "1536x1792",
+    "matrix2 size": "1792x2048",
+    "final_matrix size": "1536x2048",
+    "inference time": "1.878e-02 s"
+  },
+  {
+    "matrix1 size": "2048x2304",
+    "matrix2 size": "2304x2560",
+    "final_matrix size": "2048x2560",
+    "inference time": "4.008e-02 s"
+  },
+  {
+    "matrix1 size": "2560x3072",
+    "matrix2 size": "3072x3072",
+    "final_matrix size": "2560x3072",
+    "inference time": "7.122e-02 s"
+  },
+  {
+    "matrix1 size": "5400x4500",
+    "matrix2 size": "4500x5275",
+    "final_matrix size": "5400x5275",
+    "inference time": "3.838e-01 s"
+  }
+]
