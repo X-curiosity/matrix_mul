@@ -7,36 +7,32 @@
 
 // We define here the list that we're gonna use to iterate over several sizes of matrices 
 
-int rows1[50] = {
-    3, 7, 9, 25, 50, 75, 100, 150, 200, 256,
-    384, 512, 640, 768, 1024, 1280, 1536, 2048, 2560, 5400,
-    5600, 5800, 6000, 6200, 6400, 6600, 6800, 7000, 7200, 7400,
-    7600, 7800, 8000, 8200, 8400, 8600, 8800, 9000, 9200, 9400,
-    9600, 9800, 10000, 10500, 11000, 11500, 12000, 12500, 13000, 13500
+int rows1[24] = {
+    16, 24, 32, 40, 48, 64,
+    72, 80, 96, 112, 128, 144,
+    160, 192, 224, 256, 288, 320,
+    384, 448, 512, 576, 640, 768
 };
 
-int columns1[50] = {
-    4, 8, 16, 25, 50, 96, 128, 160, 200, 256,
-    512, 768, 896, 1024, 1280, 1536, 1792, 2304, 3072, 4500,
-    4800, 5000, 5200, 5400, 5600, 5800, 6000, 6200, 6400, 6600,
-    6800, 7000, 7200, 7400, 7600, 7800, 8000, 8200, 8400, 8600,
-    8800, 9000, 9200, 9400, 9600, 9800, 10000, 10500, 11000, 11500
+int columns1[24] = {
+    24, 32, 48, 64, 80, 96,
+    128, 160, 192, 224, 256, 288,
+    320, 384, 448, 512, 576, 640,
+    768, 896, 1024, 1152, 1280, 1536
 };
 
-int rows2[50] = {
-    4, 8, 16, 25, 50, 96, 128, 160, 200, 256,
-    512, 768, 896, 1024, 1280, 1536, 1792, 2304, 3072, 4500,
-    4800, 5000, 5200, 5400, 5600, 5800, 6000, 6200, 6400, 6600,
-    6800, 7000, 7200, 7400, 7600, 7800, 8000, 8200, 8400, 8600,
-    8800, 9000, 9200, 9400, 9600, 9800, 10000, 10500, 11000, 11500
+int rows2[24] = {
+    24, 32, 48, 64, 80, 96,
+    128, 160, 192, 224, 256, 288,
+    320, 384, 448, 512, 576, 640,
+    768, 896, 1024, 1152, 1280, 1536
 };
 
-int columns2[50] = {
-    8, 12, 20, 25, 50, 128, 160, 192, 224, 256,
-    640, 768, 896, 1024, 1536, 1792, 2048, 2560, 3072, 5275,
-    5500, 5700, 5900, 6100, 6300, 6500, 6700, 6900, 7100, 7300,
-    7500, 7700, 7900, 8100, 8300, 8500, 8700, 8900, 9100, 9300,
-    9500, 9700, 9900, 10100, 10300, 10500, 10700, 10900, 11100, 11300
+int columns2[24] = {
+    12, 16, 24, 32, 40, 48,
+    64, 96, 128, 160, 192, 224,
+    256, 288, 320, 384, 448, 512,
+    576, 640, 768, 832, 896, 1024
 };
 
 
@@ -70,7 +66,7 @@ int* create_matrix(int rows, int columns)
 
     for (int i = 0; i < rows*columns ; i++){
 
-        matrix[i] =  gen_rand(10,0);
+        matrix[i] =  gen_rand(1000,10);
 
     }
 
@@ -96,9 +92,14 @@ int* mul_matrix(int* m1 , int* m2, int row1,int column1,int row2,int column2){
     }
 
 
-    for(int j = 0; j < (row1*column2)-2; j= j+2){
-        for(int i = 0; i < row1; i++){
-            mat[j] = mat[j] + m1[i]*m2[j+column2*i];
+    for (int i = 0; i < row1; i++) {
+        for (int j = 0; j < column2; j++) {
+            int sum = 0;
+            
+            for (int k = 0; k < column1; k++) {
+                sum += m1[i * column1 + k]* m2[k * column2 + j];
+            }
+            mat[i * column2 + j] = sum;
         }
     }
 
@@ -125,25 +126,17 @@ void show_matrix(int*matrix , int row , int column){
         }
 
         }
-
-
     }
     
 }
 
 
-int main(void){
+int main(int argc, char *argv[]){
 
-    // Create a file to write the results 
-    FILE* fp = fopen("result.txt", "w");
-
-    if (fp == NULL) {
-       printf("Error: Unable to open the file.\n");
-       return 1;
-   }
-
-
-
+    if (argc < 2) {
+        printf("Usage: %s <label>\n", argv[0]);
+        return 1;
+    }
 
     //Declare variables for matrices dimensions
     int row1 ;
@@ -154,8 +147,14 @@ int main(void){
     
     
     clock_t t;  //Time variable
+    cJSON *results = cJSON_CreateArray(); // Json Array
+    
 
     for(int i = 0; i < length ;i++){
+
+        cJSON *data = cJSON_CreateObject();
+
+        
 
         row1 = rows1[i];
         row2 = rows2[i];
@@ -175,32 +174,46 @@ int main(void){
         double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
 
 
-        cJSON *json = cJSON_CreateObject();
-        cJSON_AddStringToObject(json, "m1 size", row1"x"column1);
-        cJSON_AddNumberToObject(json, "m2 size", row2"x"column2);
-        cJSON_AddStringToObject(json, "final_m size", row1"x"column2);
-        cJSON_AddStringToObject(json, "inference time", time_taken);
+        char matrix_size1[32];
+        char matrix_size2[32];
+        char matrix_size_final[32];
 
 
-        char *json_str = cJSON_Print(json);
-        fputs(json_str, fp);
+        int nbr_of_ops = row1*column2*(column1+2);
+
+
+        snprintf(matrix_size1, sizeof(matrix_size1), "%dx%d", row1, column1);
+        snprintf(matrix_size2, sizeof(matrix_size2), "%dx%d", row1, column1);
+        snprintf(matrix_size_final, sizeof(matrix_size_final), "%dx%d", row1, column2);
+
+        cJSON_AddStringToObject(data, "m1 size", matrix_size1);
+        cJSON_AddStringToObject(data, "m2 size", matrix_size2);
+        cJSON_AddStringToObject(data, "final_m size", matrix_size_final);
+        cJSON_AddNumberToObject(data, "nb_operations", nbr_of_ops);
+        cJSON_AddNumberToObject(data, "inference time (in sec)", time_taken);
+
+        cJSON_AddItemToArray(results, data); // Adding data to array
+
 
         //desallocation matrices from memory 
         free(matrix1);
         free(matrix2);
         free(final_mat);
+        
+
 
 
     }
 
-    // Closing the file using fclose()
+    char filename[64];
+    snprintf(filename, sizeof(filename), "result_%s.json", argv[1]);
+    
+    char *json_str = cJSON_Print(results);
+    FILE *fp = fopen(filename, "w");
+    fputs(json_str, fp);
     fclose(fp);
-    printf("Data successfully written in file "
-        "result.txt\n");
-    printf("The file is now closed.");
     cJSON_free(json_str);
-    cJSON_Delete(json);
-
+    cJSON_Delete(results);
     return 0;
 
 }

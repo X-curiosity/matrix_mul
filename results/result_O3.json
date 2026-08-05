@@ -1,0 +1,145 @@
+[{
+		"m1 size":	"16x24",
+		"m2 size":	"16x24",
+		"final_m size":	"16x12",
+		"nb_operations":	4992,
+		"inference time (in sec)":	4e-06
+	}, {
+		"m1 size":	"24x32",
+		"m2 size":	"24x32",
+		"final_m size":	"24x16",
+		"nb_operations":	13056,
+		"inference time (in sec)":	7e-06
+	}, {
+		"m1 size":	"32x48",
+		"m2 size":	"32x48",
+		"final_m size":	"32x24",
+		"nb_operations":	38400,
+		"inference time (in sec)":	2e-05
+	}, {
+		"m1 size":	"40x64",
+		"m2 size":	"40x64",
+		"final_m size":	"40x32",
+		"nb_operations":	84480,
+		"inference time (in sec)":	6.4e-05
+	}, {
+		"m1 size":	"48x80",
+		"m2 size":	"48x80",
+		"final_m size":	"48x40",
+		"nb_operations":	157440,
+		"inference time (in sec)":	0.000111
+	}, {
+		"m1 size":	"64x96",
+		"m2 size":	"64x96",
+		"final_m size":	"64x48",
+		"nb_operations":	301056,
+		"inference time (in sec)":	0.000212
+	}, {
+		"m1 size":	"72x128",
+		"m2 size":	"72x128",
+		"final_m size":	"72x64",
+		"nb_operations":	599040,
+		"inference time (in sec)":	0.000509
+	}, {
+		"m1 size":	"80x160",
+		"m2 size":	"80x160",
+		"final_m size":	"80x96",
+		"nb_operations":	1244160,
+		"inference time (in sec)":	0.000901
+	}, {
+		"m1 size":	"96x192",
+		"m2 size":	"96x192",
+		"final_m size":	"96x128",
+		"nb_operations":	2383872,
+		"inference time (in sec)":	0.001679
+	}, {
+		"m1 size":	"112x224",
+		"m2 size":	"112x224",
+		"final_m size":	"112x160",
+		"nb_operations":	4049920,
+		"inference time (in sec)":	0.00276
+	}, {
+		"m1 size":	"128x256",
+		"m2 size":	"128x256",
+		"final_m size":	"128x192",
+		"nb_operations":	6340608,
+		"inference time (in sec)":	0.004027
+	}, {
+		"m1 size":	"144x288",
+		"m2 size":	"144x288",
+		"final_m size":	"144x224",
+		"nb_operations":	9354240,
+		"inference time (in sec)":	0.004824
+	}, {
+		"m1 size":	"160x320",
+		"m2 size":	"160x320",
+		"final_m size":	"160x256",
+		"nb_operations":	13189120,
+		"inference time (in sec)":	0.011644
+	}, {
+		"m1 size":	"192x384",
+		"m2 size":	"192x384",
+		"final_m size":	"192x288",
+		"nb_operations":	21344256,
+		"inference time (in sec)":	0.008567
+	}, {
+		"m1 size":	"224x448",
+		"m2 size":	"224x448",
+		"final_m size":	"224x320",
+		"nb_operations":	32256000,
+		"inference time (in sec)":	0.018949
+	}, {
+		"m1 size":	"256x512",
+		"m2 size":	"256x512",
+		"final_m size":	"256x384",
+		"nb_operations":	50528256,
+		"inference time (in sec)":	0.027303
+	}, {
+		"m1 size":	"288x576",
+		"m2 size":	"288x576",
+		"final_m size":	"288x448",
+		"nb_operations":	74575872,
+		"inference time (in sec)":	0.036788
+	}, {
+		"m1 size":	"320x640",
+		"m2 size":	"320x640",
+		"final_m size":	"320x512",
+		"nb_operations":	105185280,
+		"inference time (in sec)":	0.058821
+	}, {
+		"m1 size":	"384x768",
+		"m2 size":	"384x768",
+		"final_m size":	"384x576",
+		"nb_operations":	170311680,
+		"inference time (in sec)":	0.085704
+	}, {
+		"m1 size":	"448x896",
+		"m2 size":	"448x896",
+		"final_m size":	"448x640",
+		"nb_operations":	257474560,
+		"inference time (in sec)":	0.131038
+	}, {
+		"m1 size":	"512x1024",
+		"m2 size":	"512x1024",
+		"final_m size":	"512x768",
+		"nb_operations":	403439616,
+		"inference time (in sec)":	0.220776
+	}, {
+		"m1 size":	"576x1152",
+		"m2 size":	"576x1152",
+		"final_m size":	"576x832",
+		"nb_operations":	553033728,
+		"inference time (in sec)":	0.299286
+	}, {
+		"m1 size":	"640x1280",
+		"m2 size":	"640x1280",
+		"final_m size":	"640x896",
+		"nb_operations":	735150080,
+		"inference time (in sec)":	0.405974
+	}, {
+		"m1 size":	"768x1536",
+		"m2 size":	"768x1536",
+		"final_m size":	"768x1024",
+		"nb_operations":	1209532416,
+		"inference time (in sec)":	0.980142
+	}]
